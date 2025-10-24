@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import GlobalStyles from './styles/GlobalStyles';
+import { Navbar } from './components/Navbar';
+import Section from './components/Section';
+import { Projects } from './components/Projects';
 // import navbar component
 
 function App() {
@@ -19,7 +22,20 @@ function App() {
           Learn React
         </a>
       </header> */}
-      <p>Hi</p>
+      <Navbar />
+      <Main>
+        <Section id="projects" active={activeSection === 'projects'}>
+          <Projects onProjectClick={handleProjectClick} />
+        </Section>
+        <Section id="about" active={activeSection === 'about'}>
+          <About />
+        </Section>
+        <Section id="contact" active={activeSection === 'contact'}>
+          <Contact />
+        </Section>
+
+
+      </Main>
     </div>
   );
 }
